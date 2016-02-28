@@ -3,7 +3,15 @@ PushAll-api-java is a PushAll API wrapper for Java. It is asynchronous by defaul
  classes like `CompletableFuture<T>`, so only **Java 8** or higher is supported.
 
 ## Install
-Coming soon
+```gradle
+repositories {
+	maven { url 'http://maven.ultramine.ru' }
+}
+dependencies {
+	compile 'ru.pushall.api:pushall-api-java:0.1.0'
+}
+```
+Maven central is coming soon
 
 ## Usage
 First you need to create channel pushall.ru and get id and key of your channel. Also you can just register
@@ -49,9 +57,9 @@ CompletableFuture<BroadcastResponse> future = builder.send();
 BroadcastResponse resp = future.join(); // awaiting request execution
 ```
 All requests executes asynchronously, so `CompletableFuture<T>` provides server sesponse.
- Using `.join()` is the simplest way to return to "synchronous" behavior. Broadcast requests is also
+ Using `.join()` is the simplest way to return to "synchronous" behavior. Broadcast requests are also
  scheduled: interval maintained between requests to 30 seconds (according to API spec).
- So in this example, will be blocked for 30 seconds.
+ So in this example, the thread will be blocked for 30 seconds.
 ```java
 ch.newBroadcast().setTitle("1").send().join();
 ch.newBroadcast().setTitle("2").send().join();
