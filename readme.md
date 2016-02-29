@@ -8,7 +8,7 @@ repositories {
 	maven { url 'http://maven.ultramine.ru' }
 }
 dependencies {
-	compile 'ru.pushall.api:pushall-api-java:0.1.0'
+	compile 'ru.pushall.api:pushall-api-java:0.2.0'
 }
 ```
 Maven central is coming soon
