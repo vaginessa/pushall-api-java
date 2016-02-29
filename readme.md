@@ -37,7 +37,7 @@ ch.newBroadcast()
 	.setIcon("http://...")
 	.setHidden(NotificationHideType.NOT_HIDE)
 	.setPriority(NotificationPriority.DEFAULT)
-	.setTTL(Duration.ofDays(25))
+	.setTtl(Duration.ofDays(25))
 	.setBackground(true)
 	.send().join();
 ```

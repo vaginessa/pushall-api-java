@@ -65,7 +65,7 @@ public class NotificationBuilder<R>
 		return this;
 	}
 
-	public NotificationBuilder<R> setTTL(int ttl)
+	public NotificationBuilder<R> setTtl(int ttl)
 	{
 		this.ttl = ttl;
 		return this;

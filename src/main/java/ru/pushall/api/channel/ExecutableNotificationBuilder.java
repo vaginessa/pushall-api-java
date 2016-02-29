@@ -99,9 +99,9 @@ public class ExecutableNotificationBuilder<R>
 	 * @param ttl the TTL (Time To Live) value of the notification in <b>seconds</b>
 	 * @return this object
 	 */
-	public ExecutableNotificationBuilder<R> setTTL(int ttl)
+	public ExecutableNotificationBuilder<R> setTtl(int ttl)
 	{
-		notificationBuilder.setTTL(ttl);
+		notificationBuilder.setTtl(ttl);
 		return this;
 	}
 
@@ -112,9 +112,9 @@ public class ExecutableNotificationBuilder<R>
 	 * @param ttl the TTL (Time To Live) value of the notification
 	 * @return this object
 	 */
-	public ExecutableNotificationBuilder<R> setTTL(Duration ttl)
+	public ExecutableNotificationBuilder<R> setTtl(Duration ttl)
 	{
-		notificationBuilder.setTTL((int)ttl.getSeconds());
+		notificationBuilder.setTtl((int)ttl.getSeconds());
 		return this;
 	}
 
