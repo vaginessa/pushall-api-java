@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static ru.pushall.api.request.JsonUtil.asString;
+
 public class ShowListUsersRequest extends PushAllRequest<ShowListUsersResponse>
 {
 	private final long uid;
@@ -49,9 +51,9 @@ public class ShowListUsersRequest extends PushAllRequest<ShowListUsersResponse>
 			JsonObject val = mem.getValue().asObject();
 			list.add(new ShowListUsersResponse.UserInfo(
 					Long.parseLong(mem.getName()),
-					val.getString("name", null),
-					val.getString("link", null),
-					val.getString("pic", null)
+					asString(val.get("name")),
+					asString(val.get("link")),
+					asString(val.get("pic"))
 			));
 		}
 		return new ShowListUsersResponse(list);

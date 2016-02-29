@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static ru.pushall.api.request.JsonUtil.asString;
+
 public class ShowListNotificationsRequest extends PushAllRequest<ShowListNotificationsResponse>
 {
 	private final long lid;
@@ -64,10 +66,10 @@ public class ShowListNotificationsRequest extends PushAllRequest<ShowListNotific
 			JsonObject postStat = val.get("poststat").asObject();
 			list.add(new ShowListNotificationsResponse.NotificationInfo(
 					Long.parseLong(mem.getName()),
-					val.getString("title", null),
-					val.getString("text", null),
-					val.getString("url", null),
-					val.getString("icon", null),
+					asString(val.get("title")),
+					asString(val.get("text")),
+					asString(val.get("url")),
+					asString(val.get("icon")),
 					NotificationHideType.forValue(val.getInt("hidden", 0)),
 					val.getInt("success", 0),
 					val.getInt("unfilt", 0),
