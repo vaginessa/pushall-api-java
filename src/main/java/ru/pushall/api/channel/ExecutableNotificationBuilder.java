@@ -125,7 +125,11 @@ public class ExecutableNotificationBuilder<R>
 	 * Use it if you don't use request response or use only 'lid' (LogId) field from request response.
 	 * @param background the 'background' flag of the request
 	 * @return this object
+	 * @deprecated In latest PushAll version is 'true' by default, 'false' behavior will be removed
+	 * in next releases. https://vk.com/pushall?w=wall-113609213_213%2Fall
+	 * @see <a href="https://vk.com/pushall?w=wall-113609213_213%2Fall">https://vk.com/pushall?w=wall-113609213_213%2Fall</a>
 	 */
+	@Deprecated
 	public ExecutableNotificationBuilder<R> setBackground(boolean background)
 	{
 		notificationBuilder.setBackground(background);
