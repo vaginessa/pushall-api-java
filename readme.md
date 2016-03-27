@@ -8,7 +8,7 @@ repositories {
 	maven { url 'http://maven.ultramine.ru' }
 }
 dependencies {
-	compile 'ru.pushall.api:pushall-api-java:0.2.0'
+	compile 'ru.pushall.api:pushall-api-java:0.2.1'
 }
 ```
 Maven central is coming soon
@@ -38,7 +38,6 @@ ch.newBroadcast()
 	.setHidden(NotificationHideType.NOT_HIDE)
 	.setPriority(NotificationPriority.DEFAULT)
 	.setTtl(Duration.ofDays(25))
-	.setBackground(true)
 	.send().join();
 ```
 All of these parameters are optional. You can simply write
